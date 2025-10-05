@@ -1,3 +1,6 @@
 [submodule "Back-end_Task1-3/JoTang2025/Back-end_Task1-3"]
 	path = Back-end_Task1-3/JoTang2025/Back-end_Task1-3
 	url = https://github.com/LKC2006/platform.git
+[submodule "tradeplatform"]
+	path = tradeplatform
+	url = https://github.com/LKC2006/platform.git
