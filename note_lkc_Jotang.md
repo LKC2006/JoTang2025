@@ -3,8 +3,18 @@
 开学时，我在选择方向的的时候，发现自己对嵌入式（发现焦糖并没有）和后端比较感兴趣，对焦糖工作室也是心向往之，于是决定都尝试一下。在9月17日，我完成了一个工作室的嵌入式招新题，然后从C语言和Keil5转向了Java，Javaweb,从新从零基础开始。前面花了半个月在其他方向上也许算是一个劣势，但是我还是决定要尝试一下，证明自己的学习能力。
 **嵌入式的学习笔记一并提交**
 ***
+## 科学上网  
+<a href="https://imgse.com/i/pVW3eRU"><img src="https://s21.ax1x.com/2025/09/12/pVW3eRU.png" alt="pVW3eRU.png" border="0" /></a>
+**已经解决（手机+电脑）**
+***
+## markdown
+**这一份学习笔记即本人学习成果。**   
+(学的还不是很深入)
+***
 ## Git
-<a href="https://imgse.com/i/pVoE9IK"><img src="https://s21.ax1x.com/2025/09/28/pVoE9IK.png" alt="pVoE9IK.png" border="0" /></a>
+这个VScode还有bug不写commit message就提交不上去，我弄了半天最后发现有个这个问题。Idea那边就非常顺利了。主要就是.git是个隐藏的文件，比较容易搞混忘记放在哪里,从而出现混乱.
+<a href="https://imgse.com/i/pV7EZZR"><img src="https://s21.ax1x.com/2025/10/05/pV7EZZR.png" alt="pV7EZZR.png" border="0" /></a>
+和GitHub上面的仓库连起来后以后就很方便了.
 ***
 ## VMware虚拟机
 这个我是听计算机导论的老师建议先装就在看到这道题之前先装了，没有留下截图，只能在此贴一张图了。过程一开始是Ubuntu下载极为缓慢，后来换了个地方就解决了，也许是科学上网的原因。其实整个过程跟着B站的教程来还是比较顺利的。这个虚拟机的界面分辨率不是很高。
@@ -13,7 +23,7 @@
 <a href="https://imgse.com/i/pV5ykHs"><img src="https://s21.ax1x.com/2025/09/24/pV5ykHs.png" alt="pV5ykHs.png" border="0" /></a>
 ==使用Linux==
 ***
-## Makelist&CMake
+## Makefile&CMake
 ***
 ## Task0
 配置Idea,在学信网信息出来过后申请了教育包并拿下一年了。Spring boot项目一出来就是层层叠叠的文件，一开始着实有点令人头大，但是实际项目的制作就在一个文件夹里面分层再定义类。感觉Java和C在结构上还是有区别，Java在一个项目内相互引用，单位更大，更灵活。
