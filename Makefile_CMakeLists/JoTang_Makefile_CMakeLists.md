@@ -1,4 +1,4 @@
-# Makefile&CMake
+# Makefile&CMakeLists
 
 ## 写一份笔记，描述 从 C 源码到可执行文件的完整流程。
 **见此文件夹下C_to_exe.md**
@@ -11,7 +11,7 @@
 demo.c代码是通过循环输出一个数组的各项,在前面各项中间输出空格，并在最后一项后面换行(写的有点独特)
 图片中demo.c   
 
-预处理得demo.txt（实际上不产生新文件，不过可以通过txt查看）   
+预处理得demo.txt（或者demo.i,但是经过我的观察，文件内容没有区别）（实际上不产生新文件，不过可以通过txt查看）   
 这一段上面的#include展开后非常长，但是下面还是没有什么改变
 <a href="https://imgse.com/i/pV7V7jg"><img src="https://s21.ax1x.com/2025/10/05/pV7V7jg.png" alt="pV7V7jg.png" border="0" /></a>
 编译得demo.s(即汇编语言)（变短了，因为#include展开结果中不需要的内容被舍弃了）
