@@ -23,7 +23,7 @@
 <a href="https://imgse.com/i/pV5ykHs"><img src="https://s21.ax1x.com/2025/09/24/pV5ykHs.png" alt="pV5ykHs.png" border="0" /></a>
 ==使用Linux==
 ***
-## Makefile&CMake
+## Makefile&CMakeLists
 ### 这个比较多，在另一份.md文件中
 ***
 ## Task0
