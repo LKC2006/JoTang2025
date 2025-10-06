@@ -28,22 +28,32 @@ demo.c代码是通过循环输出一个数组的各项,在前面各项中间输�
 **任务2**
 对MakeFile文件夹中的多文件写一个简单的makefile，要求能通过在终端输入
 
-make
+`make`
 得到最终多文件的可执行文件
 
-make clean
+`make clean`
 能删除生成的 .o，.out文件
 
 这个任务解决了我多年以来的一个困惑，知道了原来C也是可以作为项目相互调用，一同运行的。
 首先需要理清依赖关系，不能漏掉依赖的头文件还有依赖的情况
+```
 target : dependencies
 	action
+```
 基本上就是按照这一个格式来，保证路径的正确，逐个先编译为.o,再一起运行为hello.exe就可以了.
 Makefile文件夹附在提交文件中.
 
 **进阶**
 在makefile的基础上再补充完成cmakelist
 
+CMake的优势在于不用关心内部文件之间的依赖，更加省事，感觉基本上都分类加进去就好了。
+我先下载了一个vim，因为需要使用gcc，所以在VScode终端操作，但是由于CMake默认寻找NMake，所以需要这样配置 cmake .. -G "MinGW Makefiles"
+由于在源文件目录lib之外还多了一个hello.c，所以我决定分成两步来囊括所有的源文件。第一步是用非常自动的
+`aux_source_directory (lib SRC)`
+来把lib文件夹里面的源文件全部加入到SRC这个变量中，第二步则是用手动的
+`set(SOURCES ${SRC} hello.c)`
+来补入hello.c，一起塞进变量SOURCES。还有一些细节问题，比如说最好是让配置过程的文件放到build里面，编译后可执行程序放bin里面（代码实现）（怪不得之前下载个什么东西配置环境变量总是要找到bin目录里面）
+CMakeLists文件夹附在提交文件中
 
 ***
 
