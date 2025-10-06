@@ -4,8 +4,7 @@
 **嵌入式的学习笔记一并提交**
 ***
 ## 科学上网  
-<a href="https://imgse.com/i/pVW3eRU"><img src="https://s21.ax1x.com/2025/09/12/pVW3eRU.png" alt="pVW3eRU.png" border="0" /></a>
-**已经解决（手机+电脑）**
+**已经解决（手机+电脑），招新答题都在Github上了**
 ***
 ## markdown
 **这一份学习笔记即本人学习成果。**   
