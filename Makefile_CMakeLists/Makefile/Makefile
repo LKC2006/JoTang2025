@@ -26,4 +26,5 @@ mu.o : $(SRC)/mu.c $(HDR)/add.h $(HDR)/hello.h $(HDR)/mul.h
 	gcc -c $(SRC)/mu.c -o mu.o -I$(HDR)
 
 clean:
-	rm -f *.o
+	rm -f *.o *.exe
+#或者.out

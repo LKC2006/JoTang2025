@@ -41,8 +41,6 @@ target : dependencies
 基本上就是按照这一个格式来，保证路径的正确，逐个先编译为.o,再一起运行为hello.exe就可以了.
 Makefile文件夹附在提交文件中.
 
-
-
 **进阶**
 在makefile的基础上再补充完成cmakelist
 
