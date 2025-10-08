@@ -172,6 +172,26 @@ BCrypt这个本来想直接引入Spring Security,结果这个东西有默认认�
 ***
 ## TaskX
 
+使用阿里云的免费试用。使用PuTTY来操作服务器。
+内容涉及jar包的打包上传，在服务器中配置Java环境，MySQL，Redis。
+一开始，用maven打包的时候就遇到了问题，后来发现是项目使用JDK17，但是一开始给系统变量配置的是25，修改统一为25后还是有问题。
+lombok的依赖连同它的各种方法（log等）全部报错，更新版本等方法都没有用。实在是被卡住了，问AI，AI的方法都尝试过了也解决不了，于是我就选择把这个全部注释掉了，也只能不输出日志，补全了getter/setter方法和构造方法。   
+然后就可以打包为jar包了，第一次运行
+<a href="https://imgchr.com/i/pVHp32d"><img src="https://s21.ax1x.com/2025/10/08/pVHp32d.png" alt="pVHp32d.png" border="0" /></a>
+但是运行完了还需要配置其他的。Java和redis都是比较正常的，我使用了外部配置文件来覆盖原来jar包里面的application.properties（这样可以少传一次jar包偷个懒）但是在MySQL卡了很久。一直连不上数据库。
+<a href="https://imgchr.com/i/pVHpM5D"><img src="https://s21.ax1x.com/2025/10/08/pVHpM5D.png" alt="pVHpM5D.png" border="0" /></a>
+后来发现是服务器中登录方式必须要改为密码（这还是尝试过很多可能AI给出的结果）
+然后终于是好了
+<a href="https://imgchr.com/i/pVHpKUO"><img src="https://s21.ax1x.com/2025/10/08/pVHpKUO.png" alt="pVHpKUO.png" border="0" /></a>
+整个过程真是跌宕起伏。说实话这个过程有点复杂，我基本上就是跟着步骤来，大部分操作我根本就没见过。第一次纯用这个命令行来操作操作系统，确实是挺快的，但是需要习惯一下。
+Linux的基本操作在各个bash倒是通用的
 
+### 加分项
+配置了防火墙
+只开放了几个端口
+<a href="https://imgchr.com/i/pVHpZK1"><img src="https://s21.ax1x.com/2025/10/08/pVHpZK1.png" alt="pVHpZK1.png" border="0" /></a>
+<a href="https://imgchr.com/i/pVHpmb6"><img src="https://s21.ax1x.com/2025/10/08/pVHpmb6.png" alt="pVHpmb6.png" border="0" /></a>
+两边都有进行设置如图。
 
+访问链接感觉来不及做了。
 ***
