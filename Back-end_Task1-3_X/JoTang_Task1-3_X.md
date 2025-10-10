@@ -1,5 +1,5 @@
 # Task1-3.Javaweb后端
-有很多记录都直接写到对应的代码旁边了，感觉比较直观。
+有很多记录都直接注释到对应的代码旁边了，感觉比较直观。
 ## Task 1
 感觉和task0相比有着很大的跨度，从无到有，我同时跟着黑马程序员学习Java和Javaweb,如图是正在进行中。
 <a href="https://imgse.com/i/pV5yBbd"><img src="https://s21.ax1x.com/2025/09/24/pV5yBbd.png" alt="pV5yBbd.png" border="0" /></a>   
@@ -20,33 +20,10 @@ Spring boot的项目一开始有被繁杂的目录和层叠的文件惊讶到，
 <a href="https://imgse.com/i/pVoa0Mj"><img src="https://s21.ax1x.com/2025/09/29/pVoa0Mj.png" alt="pVoa0Mj.png" border="0" /></a>
 顺便补提交了一下修改
 <a href="https://imgse.com/i/pVoasZq"><img src="https://s21.ax1x.com/2025/09/29/pVoasZq.png" alt="pVoasZq.png" border="0" /></a>
-**Java(其实很多笔记都是写在代码中的，那样我感觉更加直观)**
+
 刚学习类和方法的时候有点迷糊，因为类实在是又能当结构体一样的，又可能当函数，方法也像函数。
-方法是程序当中最小的执行单元
-方法名字，第一个单词小写后面首字母大写
-方法的调用 method（）
-类似C中函数
-Java文件最多只能包含一个public类，且类名必须与文件名相同，对于private类，可以有多个
-方法的重载关系，仅关注方法名和形参。可以使得同样名字的方法适用于更多的情况
 new-堆内存，构造函数
-面向对象（拿/找）
-类同时具有结构体和函数的特性
 springboot maven mysql mybatis
-Javabean类，不写main方法，描述一类事物
-测试类，存在main方法，主
-对象代表什么，就需要封装对应的数据。面向对象，人观摩，则是门的方法。面向对象封装数据和行为
-Getter，Setter类似两个函数，写在含private的数据层中，需要的时候从外部调用。多用实例方法。
-this,方法调用者的地址（一般是外部的调用方法的地址值），类似被隐藏的变量
-构造方法和setter类似，setter更加灵活。可以重载，空参和有参
-static静态变量，可以使得一个类的所有对象一次赋值。public static name;类.变量=   
-静态方法,一般在工具类中,方便调用.私有化构造方法。不能访问非静态，从而没有this关键字
-接口，方法的抽象，一种规则
-IOC,控制反转
-DI,依赖注入
-Bean对象，IOC容器中创建管理的对象（这些暂时没搞懂）
-抽象类，有抽象方法，只定义，不做事。
-**Javaweb**
-Mybatis Java程序操作数据库
 @PathVariable 是从 URL 路径中获取参数（如 user/delete/7 中的 7），
  而 @RequestParam 是从 URL 的查询参数（Query String）中获取参数（如 user/delete?id=7 中的 7）。
 
@@ -54,6 +31,7 @@ Mybatis Java程序操作数据库
 简单配置了一下，包括application.properties,pom.xml里面的依赖，和一个配置类，然后就可以使用了。第一次查询没有缓存需要查询数据库，但是产生缓存，后面就缓存可以覆盖而没有调用数据库说明缓存成功。不缓存null防止错误的缓存出现在根本不存在数据的地方。
 <a href="https://imgse.com/i/pV7pnmV"><img src="https://s21.ax1x.com/2025/10/04/pV7pnmV.png" alt="pV7pnmV.png" border="0" /></a>
 这个配置类里面连@Bean都没有，比较独特，因为此处不需要修改默认的配置，从而也不需要修改自动创建的bean
+需要注意的是要把每一个接口对应不同的key，要不然就混起来了没法用
 目前后端还没上线，上线的时候这个可能还得改动。
 
 ***
@@ -172,6 +150,10 @@ BCrypt这个本来想直接引入Spring Security,结果这个东西有默认认�
 ***
 ## TaskX
 
+### 47.109.204.208 公网IP
+
+整个过程高度依赖AI帮我分析，实在是进入知识盲区了，问题太多了，感觉卡到了很偏僻的bug。
+
 使用阿里云的免费试用。使用PuTTY来操作服务器。
 内容涉及jar包的打包上传，在服务器中配置Java环境，MySQL，Redis。
 一开始，用maven打包的时候就遇到了问题，后来发现是项目使用JDK17，但是一开始给系统变量配置的是25，修改统一为25后还是有问题。
@@ -184,7 +166,26 @@ lombok的依赖连同它的各种方法（log等）全部报错，更新版本�
 然后终于是好了
 <a href="https://imgchr.com/i/pVHpKUO"><img src="https://s21.ax1x.com/2025/10/08/pVHpKUO.png" alt="pVHpKUO.png" border="0" /></a>
 整个过程真是跌宕起伏。说实话这个过程有点复杂，我基本上就是跟着步骤来，大部分操作我根本就没见过。第一次纯用这个命令行来操作操作系统，确实是挺快的，但是需要习惯一下。
-Linux的基本操作在各个bash倒是通用的
+
+第二天又出现问题，排查了半天发现数据库被人偷了，密码设置太简单123456，得重新建一下
+<a href="https://imgchr.com/i/pVHdYZ9"><img src="https://s21.ax1x.com/2025/10/10/pVHdYZ9.png" alt="pVHdYZ9.png" border="0" /></a>
+<a href="https://imgchr.com/i/pVHdNI1"><img src="https://s21.ax1x.com/2025/10/10/pVHdNI1.png" alt="pVHdNI1.png" border="0" /></a>
+说来也是够神奇的，我这点破数据库都有人要，还要0.0068比特币，五六千。不过这数据库基本上是空的，删了重建，换个密码
+
+
+redis始终有问题。是它的客户端lettuce的适配问题。感觉问题好偏僻，排查了好几个小时。最后用豆包的办法算是解决了redis，加了一个配置类。过程真的好离谱。
+<a href="https://imgchr.com/i/pVHdwRK"><img src="https://s21.ax1x.com/2025/10/10/pVHdwRK.png" alt="pVHdwRK.png" border="0" /></a>
+<a href="https://imgchr.com/i/pVHd0xO"><img src="https://s21.ax1x.com/2025/10/10/pVHd0xO.png" alt="pVHd0xO.png" border="0" /></a>
+
+但是又出现了cannot serialize的问题，一波未平一波又起。和localdatetime有关的查询都用不了，其他的没问题
+<a href="https://imgchr.com/i/pVHd6Zd"><img src="https://s21.ax1x.com/2025/10/10/pVHd6Zd.png" alt="pVHd6Zd.png" border="0" /></a>
+又配置了Jackson.conf文件来解决localdatetime，但是还是有这样的问题
+
+还需要配置redis的序列化器，这一块需要更深入了解一下。把这个当Task1附加题做的时候一下就搞好了，导致没深入想这些事情。配置好后就到了下一步。
+
+发现这个服务器莫名其妙变成了redis的从接口，需要再设置一下。
+
+最终测试了一些接口，应该是正常的。关闭我的PuTTY后也可以自己在服务器上运行。也算是上线了。
 
 ### 加分项
 配置了防火墙
@@ -193,5 +194,8 @@ Linux的基本操作在各个bash倒是通用的
 <a href="https://imgchr.com/i/pVHpmb6"><img src="https://s21.ax1x.com/2025/10/08/pVHpmb6.png" alt="pVHpmb6.png" border="0" /></a>
 两边都有进行设置如图。
 
-访问链接感觉来不及做了。
+前面防火墙一不小心把22接口忘了，后面用服务器自身的云助手补充了命令。同时，redis可以不用开。
+
+
+
 ***
