@@ -32,7 +32,7 @@ springboot maven mysql mybatis
 <a href="https://imgse.com/i/pV7pnmV"><img src="https://s21.ax1x.com/2025/10/04/pV7pnmV.png" alt="pV7pnmV.png" border="0" /></a>
 这个配置类里面连@Bean都没有，比较独特，因为此处不需要修改默认的配置，从而也不需要修改自动创建的bean
 需要注意的是要把每一个接口对应不同的key，要不然就混起来了没法用
-目前后端还没上线，上线的时候这个可能还得改动。
+目前后端还没上线，上线的时候这个可能还得改动。之前写的动态查询接口没有做缓存
 
 ***
 
