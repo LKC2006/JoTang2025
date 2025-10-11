@@ -186,6 +186,7 @@ redis始终有问题。是它的客户端lettuce的适配问题。感觉问题�
 发现这个服务器莫名其妙变成了redis的从接口，需要再设置一下。
 
 最终测试了一些接口，应该是正常的。关闭我的PuTTY后也可以自己在服务器上运行。也算是上线了。
+<a href="https://imgchr.com/i/pVHL2uT"><img src="https://s21.ax1x.com/2025/10/11/pVHL2uT.png" alt="pVHL2uT.png" border="0" /></a>
 
 ### 加分项
 配置了防火墙
