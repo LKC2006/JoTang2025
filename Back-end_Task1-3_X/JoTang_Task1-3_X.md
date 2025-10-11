@@ -195,6 +195,7 @@ redis始终有问题。是它的客户端lettuce的适配问题。感觉问题�
 <a href="https://imgchr.com/i/pVHpmb6"><img src="https://s21.ax1x.com/2025/10/08/pVHpmb6.png" alt="pVHpmb6.png" border="0" /></a>
 两边都有进行设置如图。
 
+
 前面防火墙一不小心把22接口忘了，后面用服务器自身的云助手补充了命令。同时，redis可以不用开。
 
 
