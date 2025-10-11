@@ -1,0 +1,3 @@
+[submodule "Back-end_Task1-3_X/tradeplatform"]
+	path = Back-end_Task1-3_X/tradeplatform
+	url = https://github.com/LKC2006/platform.git
