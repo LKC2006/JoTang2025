@@ -14,16 +14,37 @@
 (学的还不是很深入)
 ***
 ## Git
-这个VScode还有bug不写commit message就提交不上去，搜了一下才发现有这种bug。Idea那边就非常顺利了。主要就是.git是个隐藏的文件，比较容易搞混忘记放在哪里,从而出现混乱.
+最开始建立仓库的时候还一不小心建错了地方，还找了半天才找到，删掉重建，把几个主要的代码文件夹都建了。主要就是git是个隐藏的文件，比较容易搞混忘记放在哪里,从而出现混乱.和GitHub上面的仓库连起来后以后就很方便了。
+Idea那边就非常顺利了。
 <a href="https://imgse.com/i/pV7EZZR"><img src="https://s21.ax1x.com/2025/10/05/pV7EZZR.png" alt="pV7EZZR.png" border="0" /></a>
-和GitHub上面的仓库连起来后以后就很方便了.
+Idea写后端项目的时候，每天提交推送。最后将后端项目的仓库作为子仓库加入招新题记录仓库（就是上面那个地址）
+
+VScode，主要用于写CMakelists,Markdown等，同样一直通过提交推送同步到招新题记录仓库:
+<a href="https://imgchr.com/i/pVqnNX6"><img src="https://s21.ax1x.com/2025/10/15/pVqnNX6.png" alt="pVqnNX6.png" border="0" /></a>
+<a href="https://imgchr.com/i/pVquvsP"><img src="https://s21.ax1x.com/2025/10/15/pVquvsP.png" alt="pVquvsP.png" border="0" /></a>
+这个VScode还有bug不写commit message就提交不上去，搜了一下才发现有这种bug。
 ***
 
 ## VMware虚拟机
 这个我是听计算机导论的老师建议先装就在看到这道题之前先装了，没有留下截图，只能在此贴一张图了（这很不幸了）。过程一开始是Ubuntu下载极为缓慢，后来换了个地方就解决了，也许是科学上网的原因。其实整个过程跟着B站的教程来还是比较顺利的。这个虚拟机的界面分辨率不是很高。
-首先下载终于免费的VMware（从Broadcom官网注册后下载），和最新的LTS的Ubuntu，在安装过后创建虚拟机（一开始忘记用管理员身份了），我分配了8GB内存和40GB的虚拟磁盘（有点低配但是官方推荐好像更低），之后安装操作系统也就是用上了Ubuntu（还需要找一个.iso文件）就大功告成了。
+首先下载终于免费的VMware（从Broadcom官网注册后下载），和最新的LTS的Ubuntu，在安装过后创建虚拟机（一开始忘记用管理员身份了，不过很快发现了这个问题），我分配了8GB内存和40GB的虚拟磁盘（有点低配但是官方推荐好像更低），之后安装操作系统也就是用上了Linux（还需要找一个.iso文件）就大功告成了。
 之前在windows上面把AlibabaProtect.exe删掉可谓大费周章，之前一不小心下错了一个软件，直接出现了奇怪的壁纸，虚拟机像一个零成本的Linux电脑，就更加自由了。
 <a href="https://imgse.com/i/pV5ykHs"><img src="https://s21.ax1x.com/2025/09/24/pV5ykHs.png" alt="pV5ykHs.png" border="0" /></a>
+
+### 加分项
+
+首先在虚拟机上下载ssh
+<a href="https://imgchr.com/i/pVqnt6x"><img src="https://s21.ax1x.com/2025/10/15/pVqnt6x.png" alt="pVqnt6x.png" border="0" /></a>
+在windows主机配置，跳过两次输入密码，再把公钥传给Ubuntu就得到了
+<a href="https://imgchr.com/i/pVqnJpR"><img src="https://s21.ax1x.com/2025/10/15/pVqnJpR.png" alt="pVqnJpR.png" border="0" /></a>
+这样就可以免密进入Ubuntu系统了
+
+
+VScode Remote-ssh配置
+插件默认就是下好的，更改一下配置文件
+<a href="https://imgchr.com/i/pVqn3tJ"><img src="https://s21.ax1x.com/2025/10/15/pVqn3tJ.png" alt="pVqn3tJ.png" border="0" /></a>
+然后连接，就可以在VScode上面访问虚拟机的文件了
+<a href="https://imgchr.com/i/pVqn8h9"><img src="https://s21.ax1x.com/2025/10/15/pVqn8h9.png" alt="pVqn8h9.png" border="0" /></a>
 ***
 
 ## Makefile&CMakeLists
