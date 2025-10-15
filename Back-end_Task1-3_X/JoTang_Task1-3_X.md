@@ -178,8 +178,8 @@ redis始终有问题。是它的客户端lettuce的适配问题。感觉问题�
 <a href="https://imgchr.com/i/pVHd0xO"><img src="https://s21.ax1x.com/2025/10/10/pVHd0xO.png" alt="pVHd0xO.png" border="0" /></a>
 
 但是又出现了cannot serialize的问题，一波未平一波又起。和localdatetime有关的查询都用不了，其他的没问题
-<a href="https://imgchr.com/i/pVHd6Zd"><img src="https://s21.ax1x.com/2025/10/10/pVHd6Zd.png" alt="pVHd6Zd.png" border="0" /></a>
-又配置了Jackson.conf文件来解决localdatetime通过http格式传入传出后端的问题，但是还是有这样的问题
+发现是无法序列化LocalDateTime类型的原因。需要配置Jackson库来转换前端传来的JSON和后端传出的Java对象
+又配置了Jackson.conf文件来解决localdatetime通过http格式传入传出后端的问题
 
 还需要配置redis的序列化器，把这个当Task1附加题做的时候一下就搞好了，导致没深入想这些事情。
 发现只有键值都是String的时候，默认的序列化器和反序列化器才不会有问题，而这个时候键是String，值却是Java实体类对象，所以需要重新配置。
