@@ -168,7 +168,7 @@ lombok的依赖连同它的各种方法（log等）全部报错，更新版本�
 第二天又出现问题，排查了半天发现数据库被人偷了，密码设置太简单123456，得重新建一下
 <a href="https://imgchr.com/i/pVHdYZ9"><img src="https://s21.ax1x.com/2025/10/10/pVHdYZ9.png" alt="pVHdYZ9.png" border="0" /></a>
 <a href="https://imgchr.com/i/pVHdNI1"><img src="https://s21.ax1x.com/2025/10/10/pVHdNI1.png" alt="pVHdNI1.png" border="0" /></a>
-说来也是够神奇的，我这点破数据库都有人要，还要0.0068比特币，五六千。不过这数据库基本上是空的，删了重建，换个密码
+说来也是够神奇的，我这点数据库都有人要，还要0.0068比特币，五六千。不过这数据库基本上是空的，删了重建，换个密码
 
 
 redis始终有问题。是它的客户端lettuce的适配问题。感觉问题好偏僻，排查了好几个小时。最后用豆包的办法算是解决了redis，加了一个配置类。过程真的好离谱。
@@ -176,11 +176,12 @@ redis始终有问题。是它的客户端lettuce的适配问题。感觉问题�
 <a href="https://imgchr.com/i/pVHd0xO"><img src="https://s21.ax1x.com/2025/10/10/pVHd0xO.png" alt="pVHd0xO.png" border="0" /></a>
 
 但是又出现了cannot serialize的问题，一波未平一波又起。和localdatetime有关的查询都用不了，其他的没问题
-发现是无法序列化LocalDateTime类型的原因。需要配置Jackson库来转换前端传来的JSON和后端传出的Java对象
-又配置了Jackson.conf文件来解决localdatetime通过http格式传入传出后端的问题
+发现是无法序列化LocalDateTime类型的原因。又配置了Jackson.conf类来解决localdatetime通过http格式传出后端的问题
+实际上Jackson也在@Responsebody（或者@Restcontroller）中被自动配置。但是因为它用的默认配置在这里不够用了，所以才需要重新配置（主要要注册一下时间模块否则LocalDateTime报错）
 
 还需要配置redis的序列化器，把这个当Task1附加题做的时候一下就搞好了，导致没深入想这些事情。
-发现只有键值都是String的时候，默认的序列化器和反序列化器才不会有问题，而这个时候键是String，值却是Java实体类对象，所以需要重新配置。
+发现只有键值都是String的时候，默认的存入和取出redis仓库用的序列化器和反序列化器才不会有问题，而这个时候键是String，值却是Java实体类对象，所以需要重新配置。配置了@Cacheable的序列器等，准确来说算式配置值（而非键）的序列器（反序列器）。
+前面不想传jar包结果发现上传起来也挺快的。
 
 发现这个服务器莫名其妙变成了redis的从接口，需要再设置一下。
 
