@@ -45,6 +45,28 @@ VScode Remote-ssh配置
 <a href="https://imgchr.com/i/pVqn3tJ"><img src="https://s21.ax1x.com/2025/10/15/pVqn3tJ.png" alt="pVqn3tJ.png" border="0" /></a>
 然后连接，就可以在VScode上面访问虚拟机的文件了
 <a href="https://imgchr.com/i/pVqn8h9"><img src="https://s21.ax1x.com/2025/10/15/pVqn8h9.png" alt="pVqn8h9.png" border="0" /></a>
+
+Docker
+构建并推送了后端的项目以及Makefile和CMakeLists那两个任务的镜像。
+
+C语言部分使用了基于Debian11的gcc版本（其实是试了很多，就这个下下来了），很多镜像站都关了，所以科学上网解决的。
+首先需要下载Docker   
+配置一个Dockerfile，内容包括基础镜像，需要的文件和构造运行的指令
+对于makefile,我写了一个docker.mk用于简化操作。之后就需要构建，这一步尝试了很多个镜像站和版本才成功。
+<a href="https://imgchr.com/i/pVq2mgH"><img src="https://s21.ax1x.com/2025/10/16/pVq2mgH.png" alt="pVq2mgH.png" border="0" /></a>
+之后就只需要跟着教程推送即可。
+<a href="https://imgchr.com/i/pVq2KKA"><img src="https://s21.ax1x.com/2025/10/16/pVq2KKA.png" alt="pVq2KKA.png" border="0" /></a>
+CMakeLists类似
+中间修改了.txt中的版本，因为运行版本低
+<a href="https://imgchr.com/i/pVq2nvd"><img src="https://s21.ax1x.com/2025/10/16/pVq2nvd.png" alt="pVq2nvd.png" border="0" /></a>
+<a href="https://imgchr.com/i/pVq2e8e"><img src="https://s21.ax1x.com/2025/10/16/pVq2e8e.png" alt="pVq2e8e.png" border="0" /></a>
+<a href="https://imgchr.com/i/pVq2Qbt"><img src="https://s21.ax1x.com/2025/10/16/pVq2Qbt.png" alt="pVq2Qbt.png" border="0" /></a>
+
+后端项目采用了Docker Compose的形式，要不然太麻烦了。需要多写一个docker-compose.yml文件。
+首先用maven打包，在Dockerfile中直接COPY这个jar包，这样比较方便。为了测试，在docker中拉取了mysql和redis的镜像，并利用上面的配置文件，将他们赛道同一个网络，并成功连接本地测试程序运行正常。
+<a href="https://imgchr.com/i/pVqHGgP"><img src="https://s21.ax1x.com/2025/10/17/pVqHGgP.png" alt="pVqHGgP.png" border="0" /></a>
+然后推送成功
+<a href="https://imgchr.com/i/pVqH83t"><img src="https://s21.ax1x.com/2025/10/17/pVqH83t.png" alt="pVqH83t.png" border="0" /></a>
 ***
 
 ## Makefile&CMakeLists
