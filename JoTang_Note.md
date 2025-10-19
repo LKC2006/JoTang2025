@@ -25,10 +25,11 @@ VScode，主要用于写CMakelists,Markdown等，同样一直通过提交推送�
 这个VScode还有bug不写commit message就提交不上去，搜了一下才发现有这种bug。
 ***
 
-## VMware虚拟机
-这个我是听计算机导论的老师建议先装就在看到这道题之前先装了，没有留下截图，只能在此贴一张图了（这很不幸了）。过程一开始是Ubuntu下载极为缓慢，后来换了个地方就解决了，也许是科学上网的原因。其实整个过程跟着B站的教程来还是比较顺利的。这个虚拟机的界面分辨率不是很高。
+## Linux&WSL
+
+虚拟机我是听计算机导论的老师建议先装就在看到这道题之前先装了，没有留下截图，只能在此贴一张图了（这很不幸了）。过程一开始是Ubuntu下载极为缓慢，后来换了个地方就解决了，也许是科学上网的原因。其实整个过程跟着B站的教程来还是比较顺利的。这个虚拟机的界面分辨率不是很高。
 首先下载终于免费的VMware（从Broadcom官网注册后下载），和最新的LTS的Ubuntu，在安装过后创建虚拟机（一开始忘记用管理员身份了，不过很快发现了这个问题），我分配了8GB内存和40GB的虚拟磁盘（有点低配但是官方推荐好像更低），之后安装操作系统也就是用上了Linux（还需要找一个.iso文件）就大功告成了。
-之前在windows上面把AlibabaProtect.exe删掉可谓大费周章，之前一不小心下错了一个软件，直接出现了奇怪的壁纸，虚拟机像一个零成本的Linux电脑，就更加自由了。
+之前在windows上面把AlibabaProtect.exe删掉可谓大费周章，之前一不小心下错了一个软件，直接出现了奇怪的壁纸，虚拟机像一个零成本的Linux电脑，就更加自由了，而且感觉虽然配置不高，但是没win11奇奇怪怪的bug,怪有意思的。
 <a href="https://imgse.com/i/pV5ykHs"><img src="https://s21.ax1x.com/2025/09/24/pV5ykHs.png" alt="pV5ykHs.png" border="0" /></a>
 
 ### 加分项
@@ -46,8 +47,9 @@ VScode Remote-ssh配置
 然后连接，就可以在VScode上面访问虚拟机的文件了
 <a href="https://imgchr.com/i/pVqn8h9"><img src="https://s21.ax1x.com/2025/10/15/pVqn8h9.png" alt="pVqn8h9.png" border="0" /></a>
 
+
 Docker
-构建并推送了后端的项目以及Makefile和CMakeLists那两个任务的镜像。
+构建并推送了后端的项目以及Makefile和CMakeLists那两个任务的镜像。脚本已经提供。
 
 C语言部分使用了基于Debian11的gcc版本（其实是试了很多，就这个下下来了），很多镜像站都关了，所以科学上网解决的。
 首先需要下载Docker   
@@ -62,11 +64,13 @@ CMakeLists类似
 <a href="https://imgchr.com/i/pVq2e8e"><img src="https://s21.ax1x.com/2025/10/16/pVq2e8e.png" alt="pVq2e8e.png" border="0" /></a>
 <a href="https://imgchr.com/i/pVq2Qbt"><img src="https://s21.ax1x.com/2025/10/16/pVq2Qbt.png" alt="pVq2Qbt.png" border="0" /></a>
 
-后端项目采用了Docker Compose的形式，要不然太麻烦了。需要多写一个docker-compose.yml文件。
-首先用maven打包，在Dockerfile中直接COPY这个jar包，这样比较方便。为了测试，在docker中拉取了mysql和redis的镜像，并利用上面的配置文件，将他们赛道同一个网络，并成功连接本地测试程序运行正常。
+后端项目采用了Docker Compose的形式，要不然太麻烦了。需要多写一个docker-compose.yml文件，整个项目一同塞进来了，包含两个配置文件。
+首先用maven打包，在Dockerfile中直接COPY这个jar包，这样比较方便。为了测试，在docker中拉取了mysql和redis的镜像，并利用上面的配置文件，将他们连接到同一个网络，并用POSTMAN测试映射到宿主机的8080端口，运行正常。
 <a href="https://imgchr.com/i/pVqHGgP"><img src="https://s21.ax1x.com/2025/10/17/pVqHGgP.png" alt="pVqHGgP.png" border="0" /></a>
 然后推送成功
 <a href="https://imgchr.com/i/pVqH83t"><img src="https://s21.ax1x.com/2025/10/17/pVqH83t.png" alt="pVqH83t.png" border="0" /></a>
+脚本是那个platform.sh，测试可以运行,不如直接去http://47.109.204.208:8080看看。脚本中只添加了一个叫you密码是123456的用户。这个会生成一个配置文件，记得挑一下目录啦。
+主要学习了一下脚本的编写，这个脚本也写的比较基础，对报错这一方面还不完善。之前都是cat看，nano编辑的，这一次似乎因为是脚本，用nano这种需要交互的东西会比较复杂。
 ***
 
 ## Makefile&CMakeLists

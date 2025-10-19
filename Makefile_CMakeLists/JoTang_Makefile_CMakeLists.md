@@ -1,4 +1,8 @@
 # Makefile&CMakeLists
+
+### Github地址 https://github.com/LKC2006/JoTang2025
+**CMakeLists和Makefile均已经推至Docker Hub,用户名为lkc2006，已经提供运行脚本，需要执行权限**
+
 ***
 ## 写一份笔记，描述 从 C 源码到可执行文件的完整流程。
 
